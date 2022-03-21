@@ -24,6 +24,7 @@ const checkbox = document.getElementById("switch");
 //dont forget change instead of click
 // Apply retrieved them to the website
 checkbox.addEventListener("click", () => {
+  console.log("Da");
   let theme = localStorage.getItem("data-theme"); // Retrieve saved them from local storage
   if (theme === "dark") {
     changeThemeToLight();
