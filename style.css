@@ -80,7 +80,7 @@ p a {
   text-decoration: underline;
 }
 
-button,
+main button,
 a[type="button"],
 .project-card a {
   border: none;
@@ -97,7 +97,7 @@ a[type="button"],
   transition: var(--hover-transition);
 }
 
-button:hover,
+main button:hover,
 a[type="button"]:hover,
 .project-card a:hover {
   cursor: pointer;
@@ -110,6 +110,23 @@ a[type="button"]:hover,
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+svg {
+  width: 2.5rem;
+}
+
+path {
+  fill: var(--secondary);
+}
+
+nav button {
+  background: none;
+  border: none;
+}
+
+nav button:hover {
+  cursor: pointer;
 }
 
 a {
@@ -141,6 +158,12 @@ nav {
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 h1 {

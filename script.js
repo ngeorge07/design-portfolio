@@ -1,38 +1,5 @@
 "use strict";
 
-let theme = localStorage.getItem("data-theme");
-
-if (theme === "dark") {
-  changeThemeToDark();
-} else {
-  changeThemeToLight();
-}
-
-function changeThemeToDark() {
-  document.documentElement.setAttribute("data-theme", "dark"); // set theme to dark
-  localStorage.setItem("data-theme", "dark"); // save theme to local storage
-}
-
-function changeThemeToLight() {
-  document.documentElement.setAttribute("data-theme", "light"); // set theme light
-  localStorage.setItem("data-theme", "light"); // save theme to local storage
-}
-
-// Get the element based on ID
-const checkbox = document.getElementById("switch");
-
-//dont forget change instead of click
-// Apply retrieved them to the website
-checkbox.addEventListener("click", () => {
-  console.log("Da");
-  let theme = localStorage.getItem("data-theme"); // Retrieve saved them from local storage
-  if (theme === "dark") {
-    changeThemeToLight();
-  } else {
-    changeThemeToDark();
-  }
-});
-
 const urlParams = new URLSearchParams(document.location.search.substring(1));
 const id = urlParams.get("id");
 const url = `https://gnmmd2ndsemester-6f2a.restdb.io/rest/design-for-devs/${id}`;
@@ -54,7 +21,7 @@ fetch(url, options)
 
 function showData(data) {
   document.querySelector(".project-content h2").textContent = data.title;
-  document.querySelector(".project-content img").src = data.img;
+  document.querySelector("#mockup").src = data.img;
 
   document.querySelector("#live-link").href = data.demoLink;
   document.querySelector("#repo-link").href = data.repoLink;
@@ -65,4 +32,8 @@ function showData(data) {
     data.firstP;
   document.querySelector(".project-content p:nth-of-type(4)").textContent =
     data.secondP;
+
+  document.querySelector(".project-content h3").textContent = data.title1;
+  document.querySelector("#detail").src = data.img1;
+  document.querySelector(".project-content h3+p").textContent = data.thirdP;
 }
